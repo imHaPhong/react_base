@@ -1,9 +1,12 @@
 import { Button, ButtonLink, Modal, PageLayout } from "src/components";
 import { moneyFormatter } from "src/lib/format";
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { routeSigninBase } from "src/constants/routes";
+import { AppContext } from "src/contexts";
 
 export default function Home() {
+  const { notification } = useContext(AppContext);
+
   const [isModalOpen, setModalOpen] = useState(false);
   const openModal = useCallback(() => setModalOpen(true), []);
   const closeModal = useCallback(() => setModalOpen(false), []);
@@ -18,7 +21,7 @@ export default function Home() {
           <Button onClick={openModal}>Open modal</Button>
           <Modal isOpen={isModalOpen} onClose={closeModal}>
             <div className="h-96">
-              <h2>This is modal</h2>
+              <h2>{notification?.message}</h2>
               <Button onClick={closeModal}>Close modal</Button>
             </div>
           </Modal>
