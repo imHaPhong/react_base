@@ -3,7 +3,7 @@ import { FormEvent, useCallback, useState } from "react";
 import { Button, ButtonLink } from "src/components";
 import { routeSignupBase } from "src/constants/routes";
 import { useInputHandler } from "src/hooks";
-import { fakeSignin } from "src/services/api-auth.services";
+import { fakeSignin } from "src/services/api-auth.service";
 
 export function SignInForm() {
   const [username, handleChangeUsername] = useInputHandler("");
