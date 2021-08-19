@@ -3,6 +3,7 @@ import { ReactNode, useState } from "react";
 export type Notification = {
   children?: ReactNode;
   message?: string;
+  detail: string;
 };
 
 export function useNotification(defaultNotification?: Notification) {

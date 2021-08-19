@@ -8,9 +8,10 @@ export function App() {
     <AppContextProvider
       initNotification={{
         message: "This text is read from context.notification ",
+        detail: "my Detaul",
       }}
     >
-      <div className="w-full">
+      <div className="w-full h-full bg-rose-300">
         <BrowserRouter>
           <Switch>
             {routesConfig.map(({ path, exact, component: Component }) => (

@@ -12,10 +12,10 @@ export default function Home() {
   const closeModal = useCallback(() => setModalOpen(false), []);
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-rose-50">
       <main className="w-full flex flex-wrap justify-center">
         <PageLayout>
-          <h1 className="py-4">Hello</h1>
+          <h1 className="py-4">Hello x</h1>
           <p>Test currency format: {moneyFormatter.format(123456789.12)}</p>
 
           <Button onClick={openModal}>Open modal</Button>

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { ReactNode, createContext } from "react";
 import { useNotification } from "./notification/notification";
 
@@ -6,11 +7,16 @@ import { useNotification } from "./notification/notification";
  *
  * E.g. notification, cart, inventory...
  */
+
+console.log(typeof useNotification);
+
 export const AppContext = createContext<{
   notification: ReturnType<typeof useNotification>["notification"];
   setNotification: ReturnType<typeof useNotification>["setNotification"];
 }>({
-  notification: {},
+  notification: {
+    detail: "",
+  },
   setNotification: () => {},
 });
 
